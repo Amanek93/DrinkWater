@@ -1,19 +1,17 @@
 import React from 'react';
-import { ActionDispatcher, AppState } from '@store/models';
 import { Dispatch } from 'redux';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 
+import { ActionDispatcher, AppState } from '@store/models';
 import { ClearProgress, DrinkWater } from '../actions';
+import { GLOBAL_COLORS } from '@ui/const';
+import { commonStyles, fontStyles } from '@ui';
 import { getDrunkWater } from '../selectors';
 
 import ActivityButton from '../../ui/components/ActivityButton';
 import ProgressBar from '../../ui/components/ProgressBar';
-// @ts-ignore
-import { GLOBAL_COLORS } from '@ui/const';
-// @ts-ignore
-import { commonStyles, fontStyles } from '@ui';
 
 interface Props {
     clear: ActionDispatcher<ClearProgress>;

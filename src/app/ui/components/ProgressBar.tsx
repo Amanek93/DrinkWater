@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { GLOBAL_COLORS } from '@ui/const';
 import { StyleSheet, Text, View } from 'react-native';
+
+import { GLOBAL_COLORS } from '@ui/const';
 import { progressUtil } from '@shared/utils';
 
 interface Props {
