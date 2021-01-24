@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { GLOBAL_COLORS } from '@ui/const';
 import { StyleSheet, Text, View } from 'react-native';
+import { progressUtil } from '@shared/utils';
 
 interface Props {
     current?: number;
+    max?: number;
 }
 
-const ProgressBar = ({ current }: Props) => {
+const ProgressBar = ({ current, max }: Props) => {
     return (
         <View style={styles.mainContainer}>
-            <View style={[styles.progressBar, { width: `30%` }]} />
-            <Text style={styles.value}>{current}%</Text>
+            <View style={[styles.progressBar, { width: `${progressUtil(current, max, true)}%` }]} />
+            <Text style={styles.value}>{progressUtil(current, max)} %</Text>
         </View>
     );
 };

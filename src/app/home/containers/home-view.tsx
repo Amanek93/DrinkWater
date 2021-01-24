@@ -22,7 +22,7 @@ interface Props {
 }
 
 const HomeView = ({ clear, drink, drunkWater }: Props) => {
-    //  const drinkButtonHandler = () => {};
+    const dailyWaterLimit = 2500;
 
     return (
         <SafeAreaView style={styles.mainContainer}>
@@ -33,9 +33,9 @@ const HomeView = ({ clear, drink, drunkWater }: Props) => {
                     of water a day!
                 </Text>
                 <Text style={[fontStyles.regular, fontStyles.align]}>
-                    Your progress today: {drunkWater} / 2500 ml
+                    Your progress today: {drunkWater} / {dailyWaterLimit} ml
                 </Text>
-                <ProgressBar current={30} />
+                <ProgressBar current={drunkWater} max={dailyWaterLimit} />
                 <View style={styles.ButtonContainer}>
                     <ActivityButton
                         color={GLOBAL_COLORS.dodgerBlue}
