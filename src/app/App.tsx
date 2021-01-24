@@ -1,15 +1,24 @@
+import HomeView from './home/containers/home-view';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { persistStore } from 'redux-persist';
+import { store } from './store/';
 
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import HomeView from "./home/containers/home-view";
-
-
+const rehydrateStore = () => {
+    persistStore(store, null, () => {
+        store.getState();
+    });
+};
 
 const App = () => {
+    useEffect(() => {
+        rehydrateStore();
+    }, []);
+
     return (
-        <SafeAreaProvider>
-<HomeView/>
-        </SafeAreaProvider>
+        <Provider store={store}>
+            <HomeView />
+        </Provider>
     );
 };
 

@@ -28,7 +28,7 @@ export const commonStyles = StyleSheet.create({
         paddingRight: 25,
     },
     space_2em: {
-        marginBottom: 20,
+        marginBottom: 40,
     },
     space_3em: {
         marginBottom: 28,
