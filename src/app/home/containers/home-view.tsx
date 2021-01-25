@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Dispatch } from 'redux';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { connect } from 'react-redux';
 
 import { ActionDispatcher, AppState } from '@store/models';
@@ -12,19 +13,43 @@ import { getDrunkWater } from '../selectors';
 
 import ActivityButton from '../../ui/components/ActivityButton';
 import ProgressBar from '../../ui/components/ProgressBar';
+import auth from '@react-native-firebase/auth';
+import { AuthContext } from '../../shared/utils/auth-provider';
 
 interface Props {
     clear: ActionDispatcher<ClearProgress>;
     drink: ActionDispatcher<DrinkWater>;
     drunkWater: number;
+    navigation: StackNavigationProp<any>;
 }
 
-const HomeView = ({ clear, drink, drunkWater }: Props) => {
+const HomeView = ({ clear, drink, drunkWater, navigation }: Props) => {
+    const [user, setUser] = useState('used');
     const dailyWaterLimit = 2500;
+    const { logout } = useContext(AuthContext);
+
+    function onAuthStateChanged(user: any) {
+        setUser(user);
+    }
+
+    const handleLogoutButton = () => {
+        logout();
+        auth().onAuthStateChanged(onAuthStateChanged);
+    };
+
+    useEffect(() => {
+        if (!user) {
+            setUser(null);
+            setTimeout(() => {
+                navigation.navigate('Start');
+            }, 1000);
+        }
+    }, [user]);
 
     return (
         <SafeAreaView style={styles.mainContainer}>
             <ScrollView style={commonStyles.padding}>
+                {/*<Text style={[styles.headerText, commonStyles.space_2em]}>Welcome {user.uid}</Text>*/}
                 <Text style={[styles.headerText, commonStyles.space_2em]}>
                     Each of us needs
                     <Text style={fontStyles.highlighted}> 2.5 liters </Text>
@@ -34,18 +59,25 @@ const HomeView = ({ clear, drink, drunkWater }: Props) => {
                     Your progress today: {drunkWater} / {dailyWaterLimit} ml
                 </Text>
                 <ProgressBar current={drunkWater} max={dailyWaterLimit} />
-                <View style={styles.ButtonContainer}>
+                <View style={styles.buttonContainer}>
                     <ActivityButton
                         color={GLOBAL_COLORS.dodgerBlue}
                         onPress={drink}
                         title="Drink a cup!"
                     />
                 </View>
-                <View style={styles.ButtonContainer}>
+                <View style={styles.buttonContainer}>
                     <ActivityButton
                         color={GLOBAL_COLORS.violetRed}
                         onPress={clear}
                         title="Clear progress"
+                    />
+                </View>
+                <View style={styles.logoutButton}>
+                    <ActivityButton
+                        color={GLOBAL_COLORS.violetRed}
+                        onPress={handleLogoutButton}
+                        title="Logout"
                     />
                 </View>
             </ScrollView>
@@ -54,7 +86,7 @@ const HomeView = ({ clear, drink, drunkWater }: Props) => {
 };
 
 const styles = StyleSheet.create({
-    ButtonContainer: {
+    buttonContainer: {
         alignSelf: 'center',
     },
     headerText: {
@@ -64,6 +96,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginVertical: 60,
         textAlign: 'center',
+    },
+    logoutButton: {
+        alignSelf: 'center',
+        marginTop: '20%',
     },
     mainContainer: {
         alignItems: 'center',

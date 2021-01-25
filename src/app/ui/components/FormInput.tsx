@@ -60,14 +60,4 @@ const styles = StyleSheet.create({
         marginTop: 5,
         width: '100%',
     },
-    inputField: {
-        borderRadius: 8,
-        borderWidth: 1,
-        fontSize: 16,
-        height: DEVICE_HEIGHT / 15,
-        marginBottom: 10,
-        marginTop: 5,
-        padding: 10,
-        width: DEVICE_WIDTH / 1.5,
-    },
 });
