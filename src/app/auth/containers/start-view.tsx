@@ -18,11 +18,11 @@ type Props = {
 };
 
 const StartView = ({ navigation }: Props) => {
-    const [email, setEmail] = useState<string>();
-    const [password, setPassword] = useState<string>();
-    const [confirmPassword, setConfirmPassword] = useState<string>();
+    const [email, setEmail] = useState<string>(null);
+    const [password, setPassword] = useState<string>(null);
+    const [confirmPassword, setConfirmPassword] = useState<string>(null);
     const [registerMode, setRegisterMode] = useState<boolean>(false);
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
     const [isValid, setIsValid] = useState<boolean>(true);
     const [isConfirmValid, setIsConfirmValid] = useState<boolean>(true);
 
