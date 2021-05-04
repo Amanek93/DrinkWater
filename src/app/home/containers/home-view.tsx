@@ -39,7 +39,7 @@ const HomeView = ({ clear, drink, drunkWater, navigation }: Props) => {
 
     useEffect(() => {
         if (!user) {
-            setUser(null);
+            setUser('');
             setTimeout(() => {
                 navigation.navigate('Start');
             }, 1000);
