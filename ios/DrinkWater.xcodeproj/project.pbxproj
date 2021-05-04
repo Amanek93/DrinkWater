@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* DrinkWaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DrinkWaterTests.m */; };
-		0A93CB5025BE35D90008E393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A93CB4F25BE35D90008E393 /* GoogleService-Info.plist */; };
+		0A0093AB2641612F00EB7DB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A0093AA2641612F00EB7DB6 /* GoogleService-Info.plist */; };
+		0A0093B12641680A00EB7DB6 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A0093B02641680A00EB7DB6 /* AppCenter-Config.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -48,7 +49,8 @@
 		0200106FF1FBEB0F088FDF77 /* libPods-DrinkWater-DrinkWaterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrinkWater-DrinkWaterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B34D377DE043BABD73250D /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		064E5ADAE2A0FF232C0EAB89 /* libPods-DrinkWater.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrinkWater.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A93CB4F25BE35D90008E393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A0093AA2641612F00EB7DB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A0093B02641680A00EB7DB6 /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "../../../Downloads/AppCenter-Config.plist"; sourceTree = "<group>"; };
 		10120659D16D442F909636E5 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* DrinkWater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkWater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DrinkWater/AppDelegate.h; sourceTree = "<group>"; };
@@ -215,7 +217,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				0A93CB4F25BE35D90008E393 /* GoogleService-Info.plist */,
+				0A0093AA2641612F00EB7DB6 /* GoogleService-Info.plist */,
+				0A0093B02641680A00EB7DB6 /* AppCenter-Config.plist */,
 				13B07FAE1A68108700A75B9A /* DrinkWater */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DrinkWaterTests */,
@@ -384,8 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				0A0093B12641680A00EB7DB6 /* AppCenter-Config.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				0A93CB5025BE35D90008E393 /* GoogleService-Info.plist in Resources */,
+				0A0093AB2641612F00EB7DB6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,6 +781,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DrinkWater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -799,6 +804,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = DrinkWater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
