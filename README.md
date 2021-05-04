@@ -1,7 +1,5 @@
-#### Android: [![APPCENTER_ANDROID](https://build.appcenter.ms/v0.1/apps/9343b7b0-9f3a-48fa-84fa-de62e79427a4/branches/master/badge)](https://appcenter.ms/users/jugendarbeit/apps/Jugendapp-1/build/branches/master)
-#### iOS master: [![APPCENTER_IOS](https://build.appcenter.ms/v0.1/apps/7cfd321b-e566-40de-802f-d86746fa5d2a/branches/master/badge)](https://appcenter.ms/users/jugendarbeit/apps/Jugendapp/build/branches/master)
-#### iOS dev: [![APPCENTER_IOS_DEV](https://build.appcenter.ms/v0.1/apps/7cfd321b-e566-40de-802f-d86746fa5d2a/branches/dev/badge)](https://appcenter.ms/users/jugendarbeit/apps/Jugendapp/build/branches/dev)
-
+#### Android dev:  [![Build status](https://build.appcenter.ms/v0.1/apps/29045a2a-f338-4ea5-a4c1-c38b67aa0f2b/branches/dev/badge)](https://appcenter.ms)
+#### IOS dev:  [![Build status](https://build.appcenter.ms/v0.1/apps/fb055002-82ed-4705-a67b-a7735b7c0931/branches/dev/badge)](https://appcenter.ms)
 
 # This is official Lightsoft Mobile DrinkWater App
 https://lightsoft.pl
