@@ -1,37 +1,37 @@
 {
   "project_info": {
-    "project_number": "143780366726",
-    "project_id": "testadrian-2bbc5",
-    "storage_bucket": "testadrian-2bbc5.appspot.com"
+    "project_number": "482209424897",
+    "project_id": "drinkwater-app",
+    "storage_bucket": "drinkwater-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:143780366726:android:1754c80574767d0ea78407",
+        "mobilesdk_app_id": "1:482209424897:android:91e89a10567317526b4200",
         "android_client_info": {
           "package_name": "com.drinkwater"
         }
       },
       "oauth_client": [
         {
-          "client_id": "143780366726-qli27m5g3eurrfqlaunmroqep231g5je.apps.googleusercontent.com",
+          "client_id": "482209424897-u30a616l9jcsp5uj5cjc49ipqs5qc8se.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCJy4ZKeGLdFaADs9p6aPM3tH8Ucsn5Tew"
+          "current_key": "AIzaSyCPkJ3unljnamhp79fSmLG8sKcDqIuzY00"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "143780366726-qli27m5g3eurrfqlaunmroqep231g5je.apps.googleusercontent.com",
+              "client_id": "482209424897-u30a616l9jcsp5uj5cjc49ipqs5qc8se.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "143780366726-a76slcbre4d8dlge6rca76bos1ij3v6t.apps.googleusercontent.com",
+              "client_id": "482209424897-v6b3nie6immep0er8cgnhfav8veo3ijq.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "org.reactjs.native.example.DrinkWater"
