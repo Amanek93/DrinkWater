@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 // @ts-ignore
-import { GLOBAL_COLORS } from '@ui/const';
+import { globalColors } from '@ui/const';
 
 export const DEVICE_WIDTH = Dimensions.get('window').width;
 export const DEVICE_HEIGHT = Dimensions.get('window').height;
@@ -13,7 +13,7 @@ export const fontStyles = StyleSheet.create({
         fontWeight: 'bold',
     },
     highlighted: {
-        color: GLOBAL_COLORS.dodgerBlue,
+        color: globalColors.dodgerBlue,
         fontWeight: 'bold',
     },
     regular: {

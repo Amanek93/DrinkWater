@@ -28,6 +28,7 @@
     "appcenter-analytics": "4.1.0",
     "appcenter-crashes": "4.1.0",
     "eslint-config-satya164": "^3.1.8",
+    "react-native-linear-gradient": "^2.5.6",
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "ramda": "^0.26.1",
     "react": "16.13.1",

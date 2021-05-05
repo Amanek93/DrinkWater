@@ -2,7 +2,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../common-styles';
+import { DEVICE_HEIGHT } from '../common-styles';
 
 interface Props {
     labelValue?: string;

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-// @ts-ignore
 import { fontStyles } from '@ui/common-styles';
 
 interface Props {

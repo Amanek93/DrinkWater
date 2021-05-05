@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { GLOBAL_COLORS } from '@ui/const';
+import { globalColors } from '@ui/const';
 import { progressUtil } from '@shared/utils';
 
 interface Props {
@@ -20,13 +20,13 @@ const ProgressBar = ({ current, max }: Props) => {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        borderColor: GLOBAL_COLORS.silverChalice,
+        borderColor: globalColors.silverChalice,
         borderWidth: 1,
         height: 60,
         width: '100%',
     },
     progressBar: {
-        backgroundColor: GLOBAL_COLORS.dodgerBlue,
+        backgroundColor: globalColors.dodgerBlue,
         height: '100%',
     },
     value: {

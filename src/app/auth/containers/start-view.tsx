@@ -7,7 +7,7 @@ import ActivityButton from '../../ui/components/ActivityButton';
 import FormInput from '../../ui/components/FormInput';
 
 // @ts-ignore
-import { GLOBAL_COLORS } from '@ui/const';
+import { globalColors } from '@ui/const';
 // @ts-ignore
 import auth from '@react-native-firebase/auth';
 import { AuthContext } from '../../shared/utils/auth-provider';
@@ -18,9 +18,9 @@ type Props = {
 };
 
 const StartView = ({ navigation }: Props) => {
-    const [email, setEmail] = useState<string>(null);
-    const [password, setPassword] = useState<string>(null);
-    const [confirmPassword, setConfirmPassword] = useState<string>(null);
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
     const [registerMode, setRegisterMode] = useState<boolean>(false);
     const [user, setUser] = useState(null);
     const [isValid, setIsValid] = useState<boolean>(true);
@@ -90,7 +90,7 @@ const StartView = ({ navigation }: Props) => {
                         setPassword(userPassword);
                         handleValidPassword(userPassword);
                     }}
-                    onEndEditing={(e) => handleValidPassword(e.nativeEvent.text)}
+                    onEndEditing={(e:any) => handleValidPassword(e.nativeEvent.text)}
                     placeholderText="Password"
                     secureTextEntry
                 />
@@ -107,7 +107,7 @@ const StartView = ({ navigation }: Props) => {
                             setConfirmPassword(userConfirmPassword);
                             handleValidConfirmPassword(userConfirmPassword);
                         }}
-                        onEndEditing={(e) => handleValidConfirmPassword(e.nativeEvent.text)}
+                        onEndEditing={(e:any) => handleValidConfirmPassword(e.nativeEvent.text)}
                         placeholderText="Confirm Password"
                         secureTextEntry
                     />
@@ -117,7 +117,7 @@ const StartView = ({ navigation }: Props) => {
                 ) : null}
                 <View style={styles.ButtonContainer}>
                     <ActivityButton
-                        color={GLOBAL_COLORS.dodgerBlue}
+                        color={globalColors.dodgerBlue}
                         onPress={handleLogin}
                         title={registerMode ? 'Go to login' : "Let's log in!"}
                     />
@@ -125,7 +125,7 @@ const StartView = ({ navigation }: Props) => {
 
                 <View style={styles.ButtonContainer}>
                     <ActivityButton
-                        color={GLOBAL_COLORS.violetRed}
+                        color={globalColors.violetRed}
                         onPress={handleRegister}
                         title={registerMode ? 'Sign up!' : 'Go to register'}
                     />
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     errorText: {
-        color: GLOBAL_COLORS.violetRed,
+        color: globalColors.violetRed,
     },
     headerText: {
         alignItems: 'center',

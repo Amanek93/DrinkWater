@@ -1,12 +1,12 @@
-export const progressUtil = (current: number, max: number, fixed?: boolean) => {
-    const percentage = ((current / max) * 100).toFixed(0);
-    if (fixed) {
-        if (Number(percentage) <= 100) {
-            return percentage;
+export const progressUtil = (current: number, max: number, percentage?: boolean) => {
+    let value = (current / max);
+    if (!percentage) {
+        if (Number(value) <= 1) {
+            return value;
         } else {
-            return 100;
+            return 1;
         }
     } else {
-        return percentage;
+        return Math.round(value*100);
     }
 };

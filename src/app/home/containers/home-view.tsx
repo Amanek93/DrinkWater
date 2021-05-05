@@ -7,12 +7,12 @@ import { connect } from 'react-redux';
 
 import { ActionDispatcher, AppState } from '@store/models';
 import { ClearProgress, DrinkWater } from '../actions';
-import { GLOBAL_COLORS } from '@ui/const';
+import { globalColors } from '@ui/const';
 import { commonStyles, fontStyles } from '@ui';
 import { getDrunkWater } from '../selectors';
 
 import ActivityButton from '../../ui/components/ActivityButton';
-import ProgressBar from '../../ui/components/ProgressBar';
+import AnimatedProgressBar from '../../ui/components/AnimatedProgressBar';
 import auth from '@react-native-firebase/auth';
 import { AuthContext } from '../../shared/utils/auth-provider';
 
@@ -58,24 +58,24 @@ const HomeView = ({ clear, drink, drunkWater, navigation }: Props) => {
                 <Text style={[fontStyles.regular, fontStyles.align]}>
                     Your progress today: {drunkWater} / {dailyWaterLimit} ml
                 </Text>
-                <ProgressBar current={drunkWater} max={dailyWaterLimit} />
+                <AnimatedProgressBar current={drunkWater} max={dailyWaterLimit} />
                 <View style={styles.buttonContainer}>
                     <ActivityButton
-                        color={GLOBAL_COLORS.dodgerBlue}
+                        color={globalColors.dodgerBlue}
                         onPress={drink}
                         title="Drink a cup!"
                     />
                 </View>
                 <View style={styles.buttonContainer}>
                     <ActivityButton
-                        color={GLOBAL_COLORS.violetRed}
+                        color={globalColors.violetRed}
                         onPress={clear}
                         title="Clear progress"
                     />
                 </View>
                 <View style={styles.logoutButton}>
                     <ActivityButton
-                        color={GLOBAL_COLORS.violetRed}
+                        color={globalColors.violetRed}
                         onPress={handleLogoutButton}
                         title="Logout"
                     />
