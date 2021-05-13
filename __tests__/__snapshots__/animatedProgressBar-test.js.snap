@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "borderColor": "rgb(166, 166, 166)",
+      "borderRadius": 20,
+      "borderWidth": 1,
+      "height": 40,
+      "overflow": "hidden",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgb(30, 144, 255)",
+        "borderRadius": 20,
+        "height": "100%",
+        "transform": Array [
+          Object {
+            "translateX": -1000,
+          },
+        ],
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "position": "absolute",
+        "textAlign": "center",
+        "top": 10,
+      }
+    }
+  >
+    NaN
+     %
+  </Text>
+</View>
+`;

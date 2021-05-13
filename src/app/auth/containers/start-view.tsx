@@ -2,9 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import Toast from 'react-native-simple-toast';
+
+import { ActionDispatcher, AppState } from '@store/models';
+import { getUsers } from '../selectors';
+import { AddUser } from '../actions';
 
 import ActivityButton from '../../ui/components/ActivityButton';
 import FormInput from '../../ui/components/FormInput';
+import {AuthForm} from "../models/authForm";
+
 
 // @ts-ignore
 import { globalColors } from '@ui/const';
@@ -12,12 +19,17 @@ import { globalColors } from '@ui/const';
 import auth from '@react-native-firebase/auth';
 import { AuthContext } from '../../shared/utils/auth-provider';
 import { commonStyles } from '@ui';
+import {connect} from "react-redux";
+import {Dispatch} from "redux";
+import {User} from "../models/user";
 
 type Props = {
     navigation: StackNavigationProp<any>;
+    addUser: ActionDispatcher<AddUser>;
+    userDatabase: Array<User>;
 };
 
-const StartView = ({ navigation }: Props) => {
+const StartView = ({ navigation, addUser, userDatabase }: Props) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [confirmPassword, setConfirmPassword] = useState<string>('');
@@ -32,10 +44,17 @@ const StartView = ({ navigation }: Props) => {
     function onAuthStateChanged(user: any) {
         setUser(user);
     }
-
+//TODO: tutaj dopisać tworzenie nowego usera w database ADD_USER
     useEffect(() => {
         if (user) {
-            navigation.navigate('Home');
+            if (userDatabase.find(element => element.email === user.email)) {
+                Toast.show('Zalogowano pomyślnie.');
+                navigation.navigate('Home');
+            } else {
+                Toast.show('Dodano użytkownika do bazy.');
+                addUser({email: email, password: password});
+                navigation.navigate('Home');
+            }
         }
     }, [user]);
 
@@ -156,4 +175,13 @@ const styles = StyleSheet.create({
     },
 });
 
-export default StartView;
+const mapStateToProps = (state: AppState) => ({
+    userDatabase: getUsers(state),
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+    addUser: (userData: AuthForm) => dispatch(new AddUser(userData)),
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StartView);
